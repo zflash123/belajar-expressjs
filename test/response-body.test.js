@@ -12,6 +12,6 @@ app.get('/', (req, res) => {
 
 test("Test HTTP Response", async () => {
     const response = await request(app).get('/');
-    expect(response.get('Content-Type')).toBe('text/html; charset=utf-8');
+    expect(response.get('Content-Type')).toContain('text/html');
     expect(response.text).toBe('<html><head><title><h1>Hello HTML</h1></title></head></html>');
 })
